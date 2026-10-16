@@ -1,59 +1,101 @@
 # Student Money Copilot
 
+An AI-powered financial copilot for students, built with
+local AI, Bitcoin Lightning, and RGB assets.
+
+## The Problem
+
+Digital asset wallets and payment tools can be difficult
+for non-technical users to understand and operate.
+
+Student Money Copilot aims to make digital asset management
+more accessible through natural-language interactions,
+with a focus on students.
+
+## Our Solution
+
+We aim to build a student-focused financial assistant
+that combines:
+
+- Local AI for understanding natural-language requests
+- RGB for digital asset operations on Bitcoin
+- Lightning for payment functionality
+- A simple, accessible user experience
+
+The student-focused product is currently in development.
+
 ## Team
 
-| Name | GitHub |
+| Member | GitHub |
 |---|---|
 | Sudenur Gökçe | @sudegkc |
 | Elif Sude Şahin | @ElifSudeSahin |
 | Zeynep Akçınar | @zeynakcn |
 
-## Project Idea
+## Starting Point and Attribution
 
-Student Money Copilot is a local AI-powered financial assistant
-designed to help students interact with Bitcoin Lightning and RGB
-assets through natural-language requests.
+We followed the RGB Hackathon technical guide shared
+by the organizers:
 
-The project combines QVAC on-device AI with RGB Lightning Node
-operations, aiming to make digital asset management easier and
-more accessible to non-technical users.
+https://kaleidoswap.github.io/rgb-hackathon/
+
+Our pre-hackathon development includes setting up
+the agent environment and integrating Kaleido Mind
+with QVAC local AI and RGB Lightning Node tools.
 
 ## Technology Stack
 
-- TypeScript and Node.js
-- QVAC SDK (Qwen3.5 2B local AI)
-- Kaleido Mind agent framework
-- RGB Lightning Node (RLN)
-- RGB assets and Lightning payments
-- GitHub for team collaboration
+- TypeScript / Node.js
+- QVAC SDK — Qwen3.5 2B local AI
+- Kaleido Mind — agent framework
+- RGB Lightning Node — RGB and Lightning operations
+- Git / GitHub — version control and collaboration
 
-## Pre-Hackathon Status (October 16, 2026)
+## Pre-Hackathon Snapshot — October 16, 2026
 
-The following components existed before the official hackathon:
+The following work existed before the official start
+of the hackathon:
 
-- TypeScript agent scaffold and project configuration.
-- Integration with Kaleido Mind and QVAC SDK.
-- Local Qwen3.5 2B model configuration.
-- Mock RGB Lightning Node wallet integration.
-- Agent tools for checking balances and listing assets.
-- Agent tools for issuing RGB assets.
-- RGB and Lightning invoice creation tools.
-- RGB asset transfer tool.
-- Evaluation script covering six wallet scenarios.
-- Six out of six mock evaluation scenarios passed.
+- TypeScript agent scaffold and configuration
+- Kaleido Mind integration
+- QVAC SDK and local model configuration
+- Mock RGB Lightning Node environment
+- Wallet balance and asset listing tools
+- RGB asset issuance tool
+- RGB and Lightning invoice creation tools
+- RGB asset sending tool
+- Evaluation script for six wallet scenarios
+
+### Verified Results
+
+`npm run eval:mock` completed successfully:
+
+**6/6 mock evaluation scenarios passed.**
+
+These results demonstrate the mock agent workflow,
+not verified real-network RGB transactions.
 
 ### Current Limitations
 
-- The successful evaluation used a mocked RGB Lightning Node.
-- Mock operations do not represent real blockchain transactions.
-- Real signet integration is configured as an option but has
-  not yet been verified through the reported mock evaluation.
-- A student-focused user interface is not yet documented
-  as implemented.
+- Wallet evaluations use a simulated RGB node.
+- Real signet transactions have not been verified
+  by the reported mock tests.
+- A student-focused graphical interface is not
+  yet implemented in this snapshot.
+- Student-specific product features remain planned.
 
-## Existing Technical Documentation
+## Hackathon Development Goals
 
-# RGB agent
+During October 17–18, we aim to:
+
+1. Develop the Student Money Copilot user experience.
+2. Build student-oriented financial interaction flows.
+3. Connect AI-driven requests to meaningful RGB operations.
+4. Test and demonstrate an end-to-end working product.
+
+These are development goals, not completed features.
+
+## Technical Setup and Usage
 
 A local LLM that operates an RGB Lightning Node (RLN) through
 [@kaleidorg/mind](https://www.npmjs.com/package/@kaleidorg/mind): it reads

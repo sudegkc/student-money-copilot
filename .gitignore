@@ -1,0 +1,23 @@
+node_modules
+*.log
+.env
+eval*.jsonl
+
+# Environment variables and secrets
+.env.*
+!.env.example
+*.pem
+*.key
+*.seed
+
+# Local AI models
+*.gguf
+*.safetensors
+*.onnx
+
+# macOS
+.DS_Store
+
+# Build output
+dist/
+coverage/

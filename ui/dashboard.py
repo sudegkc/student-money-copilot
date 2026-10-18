@@ -61,7 +61,7 @@ def render_dashboard(balance: float, summary: dict, expenses: list[dict], transa
                      "Merchant": str(tx.get("merchant", tx.get("description", "Transaction"))),
                      "Category": str(tx.get("category", "Other")),
                      "Amount": float(tx["amount"])}
-                    for tx in sorted(transactions, key=lambda row: str(row.get("date", "")), reverse=True)]
+                    for tx in sorted(transactions, key=lambda row: str(row.get("date", "")), reverse=True)[:6]]
             st.dataframe(rows, hide_index=True, use_container_width=True, height=250,
                          column_config={"Amount": st.column_config.NumberColumn("Amount (€)", format="€%.2f")})
         else:
@@ -78,18 +78,3 @@ def render_dashboard(balance: float, summary: dict, expenses: list[dict], transa
             st.caption("No spending data available.")
 
     st.divider()
-    st.subheader("🛍️ Can I afford this?")
-    st.caption("Python calculates purchase affordability. Local QVAC can explain it after integration.")
-    purchase = st.number_input("Purchase amount (EUR demo)", min_value=0.0, value=80.0, step=5.0, key="preview_purchase")
-    if st.button("Check purchase", key="preview_check_purchase", type="primary"):
-        result = evaluate_purchase(balance, expenses, purchase)
-        if result["status"] == "okay":
-            st.success(result["reason"])
-        elif result["status"] == "risky":
-            st.warning(result["reason"])
-        else:
-            st.error(result["reason"])
-        st.write(f"Flexible money after purchase: **{_eur(result['flexible_after_purchase'])}**")
-        st.caption("QVAC explanation is intentionally disabled in the independent frontend preview.")
-        with st.expander("See facts prepared for QVAC"):
-            st.code(build_qvac_prompt(result, expenses))

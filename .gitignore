@@ -1,9 +1,14 @@
-node_modules
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node.js
+node_modules/
 *.log
-.env
-eval*.jsonl
 
 # Environment variables and secrets
+.env
 .env.*
 !.env.example
 *.pem
@@ -15,7 +20,8 @@ eval*.jsonl
 *.safetensors
 *.onnx
 
-# macOS
+# Other local files
+eval*.jsonl
 .DS_Store
 
 # Build output

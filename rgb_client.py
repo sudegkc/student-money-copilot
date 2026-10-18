@@ -9,7 +9,7 @@ LANDLORD_NODE = "http://localhost:3004"
 
 PROXY = "rpcs://proxy.iriswallet.com/0.2/json-rpc"
 
-STUSD_ASSET_ID = "rgb:cTZJebk3-Es~AA63-kUOxEqS-dtu9DCl-gDjmc5K-dTW2Wn0"
+STUSD_ASSET_ID ="rgb:T57uiAyF-zvoOjDd-xoZ36MD-Mh2A7eg-1e_eTvV-8emrtXc"
 
 
 def _get_json(url: str):
